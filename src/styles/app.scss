@@ -1,0 +1,13 @@
+.App {
+	text-align: center;
+}
+
+/* animation: tween-down 0.3s 1 ease-in-out forwards; */
+@keyframes tween-down {
+	0% {
+		bottom: 0%;
+	}
+	100% {
+		bottom: -15%;
+	}
+}
