@@ -1,37 +1,74 @@
 import React, {Component} from 'react';
-
+import anime from 'animejs';
 import {CSSTransitionGroup} from 'react-transition-group'; // ES6
+
+import TransitionGroup from 'react-transition-group/TransitionGroup' // ES6
 
 import '../styles/page-welcome.css';
 
-class PageStart extends Component {
+class PageWelcome extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
+	}
+
+	componentDidMount() {
+		anime({
+			targets: '.jumpo',
+			opacity: [
+				0, 1
+			],
+			scaleY: [
+				2, 1
+			],
+			delay: 750,
+			duration: 500,
+			easing: 'easeInOutQuart'
+		});
+	}
+
+	componentWillLeave() {
+		console.log("WILL NOUTNMOUT");
+		anime({
+			targets: '.jumpo',
+			opacity: [
+				1, 0
+			],
+			duration: 2000,
+
+			loop: false
+		});
 	}
 
 	render() {
 
 		return (
 			<div>
-			<CSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500} transitionEnter={false} transitionLeave={false}>
+				<CSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500} transitionEnter={false} transitionLeave={false}>
 
-<div className="jumbotron jumbotron-fluid bg-success jumpo">
-  <div className="container">
-    <h1 className="display-4">Fluid jumbotron</h1>
-    <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
-</div>
+					<div className="jumbotron jumbotron-fluid jumpo">
+						<div className="container">
+							<h1 className="display-4">Fluid jumbotron</h1>
+							<p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+						</div>
+					</div>
+					
+					{/* <div className="waveWrapper waveAnimation gradient-bg">
+						<div className="waveWrapperInner bgTop">
+						<div className="wave waveTop" ></div>
+						</div>
+						<div className="waveWrapperInner bgMiddle">
+						<div className="wave waveMiddle" ></div>
+						</div>
+						<div className="waveWrapperInner bgBottom">
+						<div className="wave waveBottom" ></div>
+						</div>
+						</div> */
+					}
 
-
-        <div className="color-block purple-gradient z-depth-2 jumpo">
-            <h5>purple-gradient</h5>
-        </div>
-
-			</CSSTransitionGroup>
-
-		</div>
-	);
+				</CSSTransitionGroup>
+			</div>
+		);
 	}
 }
-export default PageStart;
+export default PageWelcome;
