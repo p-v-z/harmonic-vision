@@ -43,30 +43,39 @@ class PageWelcome extends Component {
 	render() {
 
 		return (
-			<div>
-				<CSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500} transitionEnter={false} transitionLeave={false}>
+			<div className="page-welcome">
 
-					<div className="jumbotron jumbotron-fluid jumpo">
-						<div className="container">
-							<h1 className="display-4">Fluid jumbotron</h1>
-							<p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-						</div>
+				<div className="my-5 pt-5 jumbotron jumbotron-fluid jumpo">
+					<div className="container-fluid">
+						<h1 className="display-4">Fluid jumbotron</h1>
+						<p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
 					</div>
-					
-					{/* <div className="waveWrapper waveAnimation gradient-bg">
-						<div className="waveWrapperInner bgTop">
-						<div className="wave waveTop" ></div>
-						</div>
-						<div className="waveWrapperInner bgMiddle">
-						<div className="wave waveMiddle" ></div>
-						</div>
-						<div className="waveWrapperInner bgBottom">
-						<div className="wave waveBottom" ></div>
-						</div>
-						</div> */
-					}
+				</div>
 
-				</CSSTransitionGroup>
+
+				<div className="waveWrapper waveAnimation">
+					<div className="waveWrapperInner bgTop">
+						<div className="wave waveTop"></div>
+					</div>
+					<div className="waveWrapperInner bgMiddle">
+						<div className="wave waveMiddle"></div>
+					</div>
+					<div className="waveWrapperInner bgBottom">
+						<div className="wave waveBottom"></div>
+					</div>
+				</div>
+
+				{/* <div className="waveWrapper waveAnimation gradient-bg">
+					<div className="waveWrapperInner bgTop">
+						<div className="wave waveTop" ></div>
+					</div>
+					<div className="waveWrapperInner bgMiddle">
+						<div className="wave waveMiddle" ></div>
+					</div>
+					<div className="waveWrapperInner bgBottom">
+						<div className="wave waveBottom" ></div>
+					</div>
+				</div>  */}
 			</div>
 		);
 	}

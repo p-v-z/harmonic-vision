@@ -18,15 +18,15 @@ class App extends Component {
 	render() {
 		return (
 		<div className="App">
-			<button onClick={e=> {
+			{/* <button onClick={e=> {
 				setTimeout(()=>{
 					this.setState({currentRoute: PageStart})
 				},1000);
 
-			}
-			}>CLIK ME</button>
+				}
+			}>CLIK ME</button> */}
 			<Route exact path='/' component={this.state.currentRoute}/>
-			<Link to='/page-welcome'>Roster</Link>
+			{/* <Link to='/page-welcome'>Roster</Link> */}
 			{/* <PageWelcome/> */}
 		</div>);
 	}
