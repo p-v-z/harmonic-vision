@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import anime from 'animejs';
 
+import Wave from '../components/wave';
 import '../styles/page-welcome.css';
 
 class PageWelcome extends Component {
@@ -38,7 +39,6 @@ class PageWelcome extends Component {
 	}
 
 	render() {
-
 		return (
 			<div className="page-welcome">
 				
@@ -55,7 +55,11 @@ class PageWelcome extends Component {
 				  </div>
 				</div>
 
+	
 				{/* ===== WAVES ===== */}
+				<Wave />
+				
+				{/* OLD */}
 				{/* <div className="waveWrapper waveAnimation gradient-bg">
 					<div className="waveWrapperInner bgTop">
 						<div className="wave waveTop"></div>
@@ -67,18 +71,6 @@ class PageWelcome extends Component {
 						<div className="wave waveBottom"></div>
 					</div>
 				</div> */}
-
-				{/* <div className="waveWrapper waveAnimation gradient-bg">
-					<div className="waveWrapperInner bgTop">
-						<div className="wave waveTop" ></div>
-					</div>
-					<div className="waveWrapperInner bgMiddle">
-						<div className="wave waveMiddle" ></div>
-					</div>
-					<div className="waveWrapperInner bgBottom">
-						<div className="wave waveBottom" ></div>
-					</div>
-				</div>  */}
 			</div>
 		);
 	}

@@ -1,0 +1,106 @@
+.hero-wave {
+    position: absolute;
+	overflow: hidden;
+	
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+	
+    width: 100%;
+    height: 20%;
+	
+	.svgImg {
+	    position: absolute;
+		
+		background: url("../assets/wave-01.svg") ;
+	    background-repeat: repeat no-repeat;
+	    background-position: 0 bottom;
+		
+	    left: 0;
+	    width: 200%;
+	    height: 100%;
+		
+		filter: hue-rotate(40deg);
+				
+		transform-origin: center bottom;
+		animation: move_waveX 5s linear infinite;
+		
+	}
+}
+
+// .gradient-bg {    
+// 	z-index: 0;
+// }
+// 
+// .waveWrapper {
+//     overflow: hidden;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     top: 0;
+//     margin: auto;
+// }
+// .waveWrapperInner {
+//     position: absolute;
+//     width: 100%;
+//     overflow: hidden;
+//     height: 100%;
+// 	bottom: 0;
+// }
+// 
+// .bgTop {
+//     z-index: 15;
+//     opacity: 0.5;
+// }
+// .bgMiddle {
+//     z-index: 10;
+//     opacity: 0.75;
+// }
+// .bgBottom {
+//     z-index: 5;
+// }
+// 
+// .wave {
+//     position: absolute;
+//     left: 0;
+//     width: 200%;
+//     height: 100%;
+//     background-repeat: repeat no-repeat;
+//     background-position: 0 bottom;
+//     transform-origin: center bottom;
+// 	filter: hue-rotate(90deg);
+// }
+// .waveTop {
+// 	background-image: url('../assets/old/wave-1.png');
+//     background-size: 50% 100px;
+// 
+// }
+// .waveMiddle {
+// 	background-image: url('../assets/old/wave-2.png');
+//     background-size: 50% 120px;
+// }
+// .waveBottom {
+// 	background-image: url('../assets/old/wave-3.png');
+//     background-size: 50% 100px;
+// }
+// 
+// .waveAnimation .waveTop {
+// 	animation: move_wave 7s linear infinite;
+// }
+// .waveAnimation .waveMiddle {
+//     animation: move_wave 10s linear infinite;
+// }
+// .waveAnimation .waveBottom {
+//     animation: move_wave 13s linear infinite;
+// }
+
+@keyframes move_waveX {
+    0% { transform: translateX(0) }
+    50% { transform: translateX(-25%) }
+    100% { transform: translateX(-50%) }
+}
+// @keyframes move_wave {
+//     0% {        transform: translateX(0) translateZ(0) scaleY(1)    }
+//     50% {        transform: translateX(-25%) translateZ(0) scaleY(0.55)    }
+//     100% {        transform: translateX(-50%) translateZ(0) scaleY(1)    }
+// }
