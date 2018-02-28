@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import '../styles/page-start.css';
 
 class PageStart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {items: ['hello', 'world', 'click', 'me']};
-  }
-
   render() {
     return (
-      <div>
-		  <button>Add Item</button>
-      </div>
+		<div>
+			<div className="panelWork">
+				<h1>Work</h1>
+			</div>
+			<div className="panelPlay">
+				<h1>Play</h1>
+			</div>
+		</div>
     );
   }
 }

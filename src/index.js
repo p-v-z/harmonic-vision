@@ -8,18 +8,22 @@ import 'bootstrap/dist/css/bootstrap.css';
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-
-import App from './containers/app';
+import { Provider } from 'react-redux';
+import store from './store';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Router from './router';
 
 import registerServiceWorker from './registerServiceWorker';
 
+import './index.css';
+
 // Render App
 ReactDOM.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>
-	, document.getElementById('root'));
+	<Provider store={store}>
+			<MuiThemeProvider>
+				{Router}
+			</MuiThemeProvider>
+	</Provider>,
+	document.getElementById('root'));
 
 registerServiceWorker();
