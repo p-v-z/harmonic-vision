@@ -1,5 +1,7 @@
+@import "./colors.scss";
+
 .page-welcome {
-	background-image: linear-gradient(to top, #27273c 20%, #376686 80%);
+	background-image: linear-gradient(to top, $color-darkPurple 20%, $color-purple 80%);
     position: absolute;
 	width: 100%;
 	height: 100%;

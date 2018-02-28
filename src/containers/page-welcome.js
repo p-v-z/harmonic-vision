@@ -41,23 +41,23 @@ class PageWelcome extends Component {
 	render() {
 		return (
 			<div className="page-welcome">
-				
+
 				{/* ===== TEXT CONTENT ===== */}
 				<div className="outer">
-				  <div className="middle">
-				    <div className="inner main">
-				      <h1 className="text-field main">Harmonic Vision</h1>
-				    </div>
-  				    <div className="inner main">
-						{/* // TODO: Add route for this */}
-						<p id="start-link" className="text-field sub">Start</p>
-  				    </div>
-				  </div>
+					<div className="middle">
+						<div className="inner main">
+							<h1 className="text-field main">Harmonic Vision</h1>
+						</div>
+						<div className="inner main">
+							{/* // TODO: Add route for this */}
+							<p id="start-link" className="text-field sub">Start</p>
+						</div>
+					</div>
 				</div>
 
-	
+
 				{/* ===== WAVES ===== */}
-				<Wave />
+				<Wave waveClass="top"/>
 				
 				{/* OLD */}
 				{/* <div className="waveWrapper waveAnimation gradient-bg">
