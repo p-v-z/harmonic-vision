@@ -1,5 +1,5 @@
 .page-welcome {
-  background-image: linear-gradient(to top, #30292f 20%, #413f54 80%);
+  background-image: linear-gradient(-15deg, #30292f 10%, #2c8993 70%);
   position: absolute;
   width: 100%;
   height: 100%; }
@@ -14,23 +14,21 @@
   display: table-cell;
   vertical-align: middle; }
 
-.inner {
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30rem; }
-
 .text-field {
   text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
   color: #ddf1ff; }
   .text-field.main {
     cursor: default;
+    padding-top: 10%;
     opacity: 0.95;
-    font-size: 3rem; }
+    font-size: 260%;
+    line-height: 37px; }
   .text-field.sub {
     cursor: pointer;
     opacity: 0.6;
-    font-size: 1rem; }
+    font-size: 150%; }
 
 #start-link {
   transition: all 0.3s ease; }
@@ -47,20 +45,34 @@
   background-repeat: no-repeat;
   width: 276px;
   height: 310px;
-  transform: scale(1.75);
   margin: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.7;
-  filter: blur(1px) grayscale(80%) hue-rotate(-75deg);
+  opacity: 0.4;
   animation: App-logo-rotate infinite 10s ease-in-out; }
 
 @keyframes App-logo-rotate {
   0% {
-    transform: perspective(500) scale(1.75) rotateY(20deg); }
+    transform: translateX(0) perspective(500) scale(1.5) rotateY(10deg); }
   50% {
-    transform: perspective(500) scale(1.75) rotateY(-20deg); }
+    transform: translateX(-5rem) perspective(500) scale(1.95) rotateY(-10deg); }
   100% {
-    transform: perspective(500) scale(1.75) rotateY(20deg); } }
+    transform: translateX(0) perspective(500) scale(1.5) rotateY(10deg); } }
+
+.biz-link p {
+  bottom: -0.5rem;
+  width: 100%;
+  height: 1rem;
+  position: fixed;
+  display: table;
+  text-align: center;
+  color: #1e5c6f;
+  font-weight: 500;
+  opacity: 0.65;
+  cursor: pointer;
+  transition: all 0.2s ease; }
+  .biz-link p:hover {
+    color: #ffffff;
+    opacity: 1; }

@@ -1,4 +1,4 @@
-.wave-container {
+.ocean-container {
     position: absolute;
 	overflow: hidden;
 	
@@ -20,7 +20,7 @@
 		background: url("../assets/hv-wave.svg") ;
 	    background-repeat: repeat no-repeat;
 		
-		filter: hue-rotate(40deg);
+		// filter: hue-rotate(40deg);
 		
 		transform-origin: center;
 	    background-position: 0 bottom;
@@ -76,4 +76,13 @@
 @keyframes move-head {
     0% { transform: translateX(0) scaleX(-1) scaleY(-1) }
     100% { transform: translateX(13rem) scaleX(-1) scaleY(-1 )}
+}
+
+.wave-container {
+	&.head {
+		
+	}
+	&.foot {
+		
+	}
 }

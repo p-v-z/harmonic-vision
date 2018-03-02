@@ -10,33 +10,59 @@ class PageWelcome extends Component {
 		this.state = {};
 	}
 
-	componentDidMount() {
+	componentDidMount() {		
+		// Background
+		anime({
+			targets: '.page-welcome',
+			opacity: [0, 1],
+			delay: 0,
+			duration: 2000,
+			easing: 'easeInQuart'
+		});
+		
+		// Logo
+		anime({
+			targets: '#logo-image',
+			opacity: [0, 0.35],
+			delay: 1000,
+			duration: 4000,
+			easing: 'easeInQuart'
+		});
+		
+		// Text
 		anime({
 			targets: '.middle',
-			opacity: [
-				0, 1
-			],
-			scaleY: [
-				2, 1
-			],
-			delay: 750,
-			duration: 500,
+			opacity: [0, 1],
+			scaleY: [2, 1],
+			delay: 2000,
+			duration: 1000,
 			easing: 'easeInOutQuart'
 		});
-	}
-
-	componentWillLeave() {
-		console.log("WILL NOUTNMOUT");
+		
+		// Biz Link
 		anime({
-			targets: '.middle',
-			opacity: [
-				1, 0
-			],
-			duration: 2000,
-
-			loop: false
+			targets: '.biz-link',
+			opacity: [0, 1],
+			delay: 1000,
+			duration: 3000,
+			easing: 'easeInOutQuart'
 		});
+		
+
 	}
+
+	// componentWillLeave() {
+	// 	console.log("WILL NOUTNMOUT");
+	// 	anime({
+	// 		targets: '.middle',
+	// 		opacity: [
+	// 			1, 0
+	// 		],
+	// 		duration: 2000,
+	// 
+	// 		loop: false
+	// 	});
+	// }
 
 	render() {
 		return (
@@ -44,7 +70,7 @@ class PageWelcome extends Component {
 
 				{/* ===== BACKGROUND LOGO ===== */}
 				<image id="logo-image" />
-				
+
 				{/* ===== TEXT CONTENT ===== */}
 				<div className="outer">
 					<div className="middle">
@@ -57,9 +83,17 @@ class PageWelcome extends Component {
 						</div>
 					</div>
 				</div>
-				
+
 				{/* ===== Waves ===== */}
 				<Waves />
+
+				{/* ===== Waves ===== */}
+				<div className="biz-link">
+
+					{/* <a href="" */}
+					<p>pvz</p>
+				</div>
+
 			</div>
 		);
 	}
