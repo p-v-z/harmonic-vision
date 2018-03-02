@@ -1,6 +1,8 @@
-.hero-wave {
+.wave-container {
     position: absolute;
 	overflow: hidden;
+	
+	pointer-events: none;
 	
     left: 0px;
     right: 0px;
@@ -11,68 +13,67 @@
 	.svgImg {
 	    position: absolute;
 		
+		// The svg width:height is important for transition (13:9)
 	    width: 200%;
-	    height: 30%;
+	    height: 9rem;
 		
-		background: url("../assets/wave-03.svg") ;
+		background: url("../assets/hv-wave.svg") ;
 	    background-repeat: repeat no-repeat;
 		
 		filter: hue-rotate(40deg);
 		
 		transform-origin: center;
-	    background-position: 0 botom;
+	    background-position: 0 bottom;
 				
 		&.head {
-			top: 0rem;
-			right: 0rem;
+			right: 0;
+			
 			&.top {
+				top: 1rem;
 				opacity: 0.3;
-				animation: move_waveUpDown 10s linear infinite;
+				animation: move-head 10s linear infinite;
 			}
 			&.mid {
-				top: -3rem;
+				top: -2rem;
 				opacity: 0.6;
-				animation: move_waveUpDown 8s linear infinite;
+				animation: move-head 6s linear infinite;
 			}
 			&.bot {
-				top: -6rem;
+				top: -5rem;
 				opacity: 0.9;
-				animation: move_waveUpDown 6s linear infinite;
+				animation: move-head 3s linear infinite;
 			}
 		}
 		
 		&.foot {
-	    	bottom: 0px;
+	    	bottom: 0;
+			
 			&.top {
+				bottom: 1rem;
 				opacity: 0.3;
-				animation: move_waveUpright 10s linear infinite;
+				animation: move-foot 10s linear infinite;
 			}
 			&.mid {
-				bottom: -3rem;
+				bottom: -2rem;
 				opacity: 0.6;
-				animation: move_waveUpright 8s linear infinite;
+				animation: move-foot 6s linear infinite;
 			}
 			&.bot {
-				bottom: -6rem;
+				bottom: -5rem;
 				opacity: 0.9;
-				animation: move_waveUpright 6s linear infinite;
+				animation: move-foot 3s linear infinite;
 			}
 		}
 		
 	}
 }
 
-@keyframes move_waveUpright {
+@keyframes move-foot {
     0% { transform: translateX(0) }
-    100% { transform: translateX(-7rem) }
+    100% { transform: translateX(-13rem) }
 }
 
-@keyframes move_waveUpDown {
+@keyframes move-head {
     0% { transform: translateX(0) scaleX(-1) scaleY(-1) }
-    100% { transform: translateX(7rem) scaleX(-1) scaleY(-1 )}
+    100% { transform: translateX(13rem) scaleX(-1) scaleY(-1 )}
 }
-// @keyframes move_wave {
-//     0% {        transform: translateX(0) translateZ(0) scaleY(1)    }
-//     50% {        transform: translateX(-25%) translateZ(0) scaleY(0.55)    }
-//     100% {        transform: translateX(-50%) translateZ(0) scaleY(1)    }
-// }
