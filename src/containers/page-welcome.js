@@ -7,132 +7,179 @@ import '../styles/page-welcome.css';
 class PageWelcome extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			width: 0,
+			height: 0
+		};
+		
+		this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+		this.routeToNextPage = this.routeToNextPage.bind(this);
 	}
-
-	componentDidMount() {		
-		// Background
-		anime({
-			targets: '.page-welcome',
-			opacity: [0, 1],
-			delay: 0,
-			duration: 2000,
-			easing: 'easeInQuart'
-		});
-		
-		// Logo
-		anime({
-			targets: '#logo-image',
-			opacity: [0, 0.1],
-			delay: 1000,
-			duration: 4000,
-			easing: 'easeInQuart'
-		});
-		
-		// Text
-		anime({
-			targets: '.middle',
-			opacity: [0, 1],
-			scaleY: [2, 1],
-			delay: 2000,
-			duration: 1000,
-			easing: 'easeInOutQuart'
-		});
-		
-		// Biz Link
-		anime({
-			targets: '.biz-link',
-			opacity: [0, 1],
-			delay: 1000,
-			duration: 3000,
-			easing: 'easeInOutQuart'
-		});
-	}
-
-	startExit() {
-		// Background
-		anime({
-			targets: '.page-welcome',
-			opacity: 0,
-			delay: 500,
-			duration: 2000,
-			easing: 'easeInQuart'
-		});
 	
-		// Logo
-		anime({
-			targets: '#logo-image',
-			opacity: 0,
-			duration: 1000,
-			easing: 'easeInQuart'
+	componentDidMount() {
+		// Listen for resize
+		this.updateWindowDimensions();
+		window.addEventListener('resize', this.updateWindowDimensions);
+
+		////////////////////////////////////////////////////
+		// eslint-disable-next-line
+		{/* -> Animate IN */
+			anime({ // Background
+				targets: '.page-welcome',
+				opacity: [0, 1],
+				delay: 0,
+				duration: 2000,
+				easing: 'easeInQuart'
+			});
+			anime({ // Logo
+				targets: '#logo-image',
+				opacity: [0, 0.1],
+				delay: 1000,
+				duration: 3000,
+				easing: 'easeInQuart'
+			});
+			anime({ // Text
+				targets: '.middle',
+				opacity: [0, 1],
+				scaleY: [2, 1],
+				delay: 2000,
+				duration: 1000,
+				easing: 'easeInOutQuart'
+			});
+			anime({ // Biz Link
+				targets: '.biz-link',
+				opacity: [0, 1],
+				delay: 1000,
+				duration: 3000,
+				easing: 'easeInOutQuart'
+			});
+		}
+		////////////////////////////////////////////////////
+	}
+
+	updateWindowDimensions() {
+		this.setState({
+			width: window.innerWidth, 
+			height: window.innerHeight
 		});
-		
-		// Text
-		anime({
-			targets: '.middle',
-			opacity: 0,
-			scaleY: 0,
-			easing: 'easeInOutQuart'
-		});
-		
-		// Biz Link
-		anime({
-			targets: '.biz-link',
-			opacity: 0,
-			easing: 'easeInOutQuart'
-		});
-		
-		// Wave
-		anime({
-			targets: '.wave-container .head',
-			top: -500,
-			duration: 2000,
-			easing: 'easeInOutQuart'
-		});
-		anime({
-			targets: '.wave-container .foot',
-			bottom: -500,
-			duration: 2000,
-			easing: 'easeInOutQuart'
-		});
-		
-		// setTimeout(this.routeToNextPage.bind(this), 2500);
+	}
+
+	handleClick() {
+		////////////////////////////////////////////////////
+		// eslint-disable-next-line
+		{/* Animate OUT -> */
+			// Background
+			anime({
+				targets: '.page-welcome', 
+				opacity: 0, 
+				delay: 500, 
+				duration: 2000, 
+				easing: 'easeInQuart'}
+			);
+			
+			// Logo
+			anime({
+				targets: '#logo-image', 
+				opacity: 0, 
+				duration: 1000, 
+				easing: 'easeInQuart'
+			});
+			
+			// Text
+			anime({
+				targets: '.middle', 
+				opacity: 0, 
+				scaleX: 0.1, 
+				scaleY: 0.1,
+				duration: 750,
+				easing: 'easeInBack'
+			});
+			
+			// Biz Link
+			anime({
+				targets: '.biz-link', 
+				opacity: 0, 
+				easing: 'easeInOutQuart'
+			});
+			
+			// Waves
+			anime({targets: '.wave-container .head', top: -500, duration: 2000, easing: 'easeInOutQuart'});
+			anime({targets: '.wave-container .foot', bottom: -500, duration: 2000, easing: 'easeInOutQuart'});
+		}
+		////////////////////////////////////////////////////
+				
+		setTimeout(this.routeToNextPage, 2750);
 	}
 
 	routeToNextPage() {
-		console.log("ROOOT");
+		this.props.history.push('/start');
+	}
+	
+	componentWillUnmount() {
+		// Destroy listeners
+		window.removeEventListener('resize', this.updateWindowDimensions);
 	}
 
 	render() {
+		let width = this.state.width;
+		let height = this.state.height;
+
+		// Center logo
+		let logoSize,topOff,leftOff;
+		if (width <= height) { // Portrait
+			logoSize = width * 0.9;
+			// marg = width * 0.05;
+			topOff = (height - logoSize) / 2;
+			leftOff = width * 0.05;
+			console.log(`Screen orientation: Portrait (${width}px | ${height}px)`);
+		} else { // Landscape
+			logoSize = height * 0.9;
+			// marg = height * 0.05;
+			topOff = height * 0.05;
+			leftOff = (width - logoSize) / 2;
+			console.log(`Screen orientation: Landscape  (${width}px | ${height}px)`);
+		}
+
 		return (
 			<div className="page-welcome">
 
 				{/* ===== BACKGROUND LOGO ===== */}
-				<div id="logo-image" />
+				<div id="logo-image" 
+					style={{
+						width: logoSize,
+						height: logoSize,
+						top: topOff,
+						left: leftOff
+					}}/> 
 
 				{/* ===== TEXT CONTENT ===== */}
 				<div className="outer">
 					<div className="middle">
+
 						<div className="inner main">
 							<h1 className="text-field main">Harmonic Vision</h1>
 						</div>
+
 						<div className="inner main">
 							{/* // TODO: Add route for this */}
 							<p 
 								id="start-link" 
-								className="text-field sub"
-								onClick={this.startExit}
-								>Start</p>
+								className="text-field sub" 
+								onClick={this.handleClick}
+							>
+								Start
+							</p>
 						</div>
+
 					</div>
 				</div>
 
 				{/* ===== Waves ===== */}
-				<Waves />
+				<Waves/> 
 
-				{/* ===== Waves ===== */}
+				{/* ===== Biz Link ===== */}
 				<div className="biz-link">
-
 					{/* <a href="" */}
 					<p>pvz</p>
 				</div>

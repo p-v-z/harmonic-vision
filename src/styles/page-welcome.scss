@@ -3,8 +3,8 @@
 .page-welcome {
 	background-image: linear-gradient(
 		-15deg, 
-		$color-darkPurple 10%, 
-		$color-teal 70%
+		$color-darkPurple 5%, 
+		$color-teal 95%
 	);
     position: absolute;
 	width: 100%;
@@ -61,17 +61,6 @@
 	position: fixed;
 	
 	background-repeat: no-repeat;
-	
-	// SVG hardcode
-	width: 276px;
-	height: 310px;
-		
-	// Center
-	margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 
 .biz-link {
@@ -85,13 +74,12 @@
 		color: $color-darkBlue;
 		font-weight: 500;
 		opacity: 0.65;
-			cursor: pointer;
+		cursor: pointer;
 		
 		transition: all 0.2s ease;
 		&:hover {
 			color: #ffffff;
 			opacity: 1;
 		}
-		
 	}
 }

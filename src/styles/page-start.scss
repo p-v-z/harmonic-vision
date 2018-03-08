@@ -1,3 +1,76 @@
 .panelWork {
 	background-color: red;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica;
+}
+
+.block {
+  min-height: 100vh;
+  background-color: fadeout(#000, 80%);
+  position: relative;
+  overflow: hidden;
+}
+
+$side-skew-angle: 10deg;
+$side-color-left: tomato;
+$side-color-right: purple;
+
+.side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  
+  // color: white;
+  
+  transform: skew($side-skew-angle * -1);
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
+
+  &.left {
+	animation-name: slide-left;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	
+    background-color: $side-color-left;
+    &:hover {
+      background-color: darken($side-color-left, 20%);
+    }
+  }
+
+  &.right {
+	animation-name: slide-right;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	
+    background-color: $side-color-right;
+    &:hover {
+      background-color: darken($side-color-right, 20%);
+    }
+  }
+}
+
+@keyframes slide-left {
+    0% { left: 110% }
+    100% { left: 49% }
+}
+
+@keyframes slide-right {
+    0% { right: -110% }
+    100% { right: 49% }
+}

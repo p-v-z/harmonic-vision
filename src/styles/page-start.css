@@ -1,2 +1,57 @@
 .panelWork {
   background-color: red; }
+
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Helvetica; }
+
+.block {
+  min-height: 100vh;
+  background-color: fadeout(#000, 80%);
+  position: relative;
+  overflow: hidden; }
+
+.side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transform: skew(-10deg);
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer; }
+  .side.left {
+    animation-name: slide-left;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    background-color: tomato; }
+    .side.left:hover {
+      background-color: #e02200; }
+  .side.right {
+    animation-name: slide-right;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    background-color: purple; }
+    .side.right:hover {
+      background-color: #1a001a; }
+
+@keyframes slide-left {
+  0% {
+    left: 110%; }
+  100% {
+    left: 49%; } }
+
+@keyframes slide-right {
+  0% {
+    right: -110%; }
+  100% {
+    right: 49%; } }
