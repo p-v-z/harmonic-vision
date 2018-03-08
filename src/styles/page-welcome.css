@@ -49,17 +49,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  opacity: 0.4;
-  animation: App-logo-rotate infinite 10s ease-in-out; }
-
-@keyframes App-logo-rotate {
-  0% {
-    transform: translateX(0) perspective(500) scale(1.5) rotateY(10deg); }
-  50% {
-    transform: translateX(-5rem) perspective(500) scale(1.95) rotateY(-10deg); }
-  100% {
-    transform: translateX(0) perspective(500) scale(1.5) rotateY(10deg); } }
+  bottom: 0; }
 
 .biz-link p {
   bottom: -0.5rem;
