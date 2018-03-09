@@ -1,8 +1,17 @@
 .btnContainer {
+	// display: block;
+	// position: fixed;
+	// width: 100px;
+	// height: 100px;
+	// background-color: green;
+	// z-index: 10;
+}
+
+.hamburger-icon {
+	background-image: url("../assets/hamburger.svg");
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
 	display: block;
 	position: fixed;
-	width: 100px;
-	height: 100px;
-	background-color: green;
-	z-index: 10;
 }

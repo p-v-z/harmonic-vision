@@ -1,16 +1,18 @@
-.panelWork {
-	background-color: red;
-}
+@import "./colors.scss";
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Helvetica;
-}
+// .panelWork {
+// 	background-color: red;
+// }
+// 
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+// }
+// 
+// body {
+//   font-family: Helvetica;
+// }
 
 .block {
   min-height: 100vh;
@@ -20,8 +22,8 @@ body {
 }
 
 $side-skew-angle: 10deg;
-$side-color-left: tomato;
-$side-color-right: purple;
+$side-color-left: $color-darkBlue;
+$side-color-right: $color-purple;
 
 .side {
   display: flex;
@@ -33,8 +35,6 @@ $side-color-right: purple;
   height: 100%;
   width: 100%;
   z-index: 1;
-  
-  // color: white;
   
   transform: skew($side-skew-angle * -1);
   transition: background-color 0.5s ease-in-out;
@@ -48,7 +48,7 @@ $side-color-right: purple;
 	
     background-color: $side-color-left;
     &:hover {
-      background-color: darken($side-color-left, 20%);
+      background-color: lighten($side-color-left, 20%);
     }
   }
 
@@ -60,7 +60,7 @@ $side-color-right: purple;
 	
     background-color: $side-color-right;
     &:hover {
-      background-color: darken($side-color-right, 20%);
+      background-color: lighten($side-color-right, 20%);
     }
   }
 }

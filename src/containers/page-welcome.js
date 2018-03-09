@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import anime from 'animejs';
 
+import MenuButton from '../components/menuButton';
 import Waves from '../components/wave';
+
 import '../styles/page-welcome.css';
 
 class PageWelcome extends Component {
@@ -143,6 +145,7 @@ class PageWelcome extends Component {
 
 		return (
 			<div className="page-welcome">
+				<MenuButton />
 
 				{/* ===== BACKGROUND LOGO ===== */}
 				<div id="logo-image" 

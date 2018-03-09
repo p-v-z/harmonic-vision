@@ -9,6 +9,8 @@ class PageStart extends Component {
 		return (
 			<div>		
 				<MenuButton />
+				{/* <div>a</div> */}
+				{/* <div>b</div> */}
 				<div className="block">
 					<div className="side left" />
 					<div className="side right" />

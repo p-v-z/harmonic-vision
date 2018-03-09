@@ -1,14 +1,3 @@
-.panelWork {
-  background-color: red; }
-
-html,
-body {
-  margin: 0;
-  padding: 0; }
-
-body {
-  font-family: Helvetica; }
-
 .block {
   min-height: 100vh;
   background-color: fadeout(#000, 80%);
@@ -32,17 +21,17 @@ body {
     animation-duration: 1.5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    background-color: tomato; }
+    background-color: #1e5c6f; }
     .side.left:hover {
-      background-color: #e02200; }
+      background-color: #349fbf; }
   .side.right {
     animation-name: slide-right;
     animation-duration: 1.5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    background-color: purple; }
+    background-color: #413f54; }
     .side.right:hover {
-      background-color: #1a001a; }
+      background-color: #6e6b8e; }
 
 @keyframes slide-left {
   0% {
