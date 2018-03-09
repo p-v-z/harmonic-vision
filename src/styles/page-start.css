@@ -12,35 +12,74 @@
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: 1;
   transform: skew(-10deg);
-  transition: background-color 0.5s ease-in-out;
-  cursor: pointer; }
+  transition: background-color 0.5s ease-in-out; }
   .side.left {
-    animation-name: slide-left;
-    animation-duration: 1.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
+    z-index: 2;
     background-color: #1e5c6f; }
-    .side.left:hover {
-      background-color: #349fbf; }
+    .side.left.in {
+      animation-name: slide-left;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards; }
+    .side.left.idle {
+      right: 49%;
+      cursor: pointer; }
+      .side.left.idle:hover {
+        background-color: #349fbf; }
+    .side.left.goLeft {
+      background-color: #349fbf;
+      animation-name: fill-screenL;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards; }
+    .side.left.goRight {
+      animation-name: fill-screenR;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards; }
   .side.right {
-    animation-name: slide-right;
-    animation-duration: 1.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
+    z-index: 1;
     background-color: #413f54; }
-    .side.right:hover {
-      background-color: #6e6b8e; }
+    .side.right.in {
+      animation-name: slide-right;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards; }
+    .side.right.idle {
+      left: 50%;
+      cursor: pointer; }
+      .side.right.idle:hover {
+        background-color: #6e6b8e; }
+    .side.right.goLeft {
+      background-color: #6e6b8e;
+      transform: skew(0); }
+    .side.right.goRight {
+      background-color: #6e6b8e;
+      transform: skew(0); }
 
 @keyframes slide-left {
-  0% {
-    left: 110%; }
-  100% {
-    left: 49%; } }
-
-@keyframes slide-right {
   0% {
     right: -110%; }
   100% {
     right: 49%; } }
+
+@keyframes slide-right {
+  0% {
+    left: 110%; }
+  100% {
+    left: 50%; } }
+
+@keyframes fill-screenL {
+  0% {
+    right: 49%;
+    width: 100%; }
+  100% {
+    right: -50%;
+    width: 200%; } }
+
+@keyframes fill-screenR {
+  0% {
+    right: 49%; }
+  100% {
+    right: 110%; } }

@@ -145,7 +145,7 @@ class PageWelcome extends Component {
 
 		return (
 			<div className="page-welcome">
-				<MenuButton />
+				{/* <MenuButton /> */}
 
 				{/* ===== BACKGROUND LOGO ===== */}
 				<div id="logo-image" 
@@ -165,7 +165,6 @@ class PageWelcome extends Component {
 						</div>
 
 						<div className="inner main">
-							{/* // TODO: Add route for this */}
 							<p 
 								id="start-link" 
 								className="text-field sub" 
