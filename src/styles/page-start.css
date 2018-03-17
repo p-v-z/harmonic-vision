@@ -1,3 +1,6 @@
+/*/////////////////////////////////////
+	Filter Colors (IDE HIGHLIGHTER)
+/////////////////////////////////////*/
 .block {
   min-height: 100vh;
   background-color: fadeout(#000, 80%);
@@ -16,7 +19,7 @@
   transition: background-color 0.5s ease-in-out; }
   .side.left {
     z-index: 2;
-    background-color: #1e5c6f; }
+    background-color: #444347; }
     .side.left.in {
       animation-name: slide-left;
       animation-duration: 1.5s;
@@ -26,9 +29,9 @@
       right: 49%;
       cursor: pointer; }
       .side.left.idle:hover {
-        background-color: #349fbf; }
+        background-color: #5D5C61; }
     .side.left.goLeft {
-      background-color: #349fbf;
+      background-color: #5D5C61;
       animation-name: fill-screenL;
       animation-duration: 1.5s;
       animation-timing-function: ease;
@@ -40,7 +43,7 @@
       animation-fill-mode: forwards; }
   .side.right {
     z-index: 1;
-    background-color: #413f54; }
+    background-color: #435e72; }
     .side.right.in {
       animation-name: slide-right;
       animation-duration: 1.5s;
@@ -50,12 +53,13 @@
       left: 50%;
       cursor: pointer; }
       .side.right.idle:hover {
-        background-color: #6e6b8e; }
+        background-color: #567992; }
     .side.right.goLeft {
-      background-color: #6e6b8e;
+      background-color: #567992;
       transform: skew(0); }
     .side.right.goRight {
-      background-color: #6e6b8e;
+      width: 100%;
+      background-color: #567992;
       transform: skew(0); }
 
 @keyframes slide-left {
@@ -82,4 +86,23 @@
   0% {
     right: 49%; }
   100% {
-    right: 110%; } }
+    right: 120%; } }
+
+.labelContainer {
+  position: relative;
+  width: 50%;
+  height: stretch;
+  float: left;
+  z-index: 4;
+  pointer-events: none; }
+
+.label {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  font-size: 3rem;
+  transition: all 0.3s ease; }

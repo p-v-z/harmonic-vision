@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import MenuButton from '../components/menuButton';
+// import MenuButton from '../components/menuButton';
 
 import '../styles/page-start.css';
 
@@ -39,7 +39,7 @@ class PageStart extends Component {
 		
 		return (
 			<div>		
-				<MenuButton />
+				{/* <MenuButton /> */}
 				
 				<div className="block">
 					
@@ -56,6 +56,13 @@ class PageStart extends Component {
 						className={rightClass}
 						onClick={this.clickRight}
 					/>
+					
+					{/* <div className="labelContainer">
+						<h1 className="label work">Work</h1>
+					</div> */}
+					<div className="labelContainer">
+						<h1 className="label play">Play</h1>
+					</div>
 				</div>
 			</div>
 		);

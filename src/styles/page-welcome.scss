@@ -3,8 +3,8 @@
 .page-welcome {
 	background-image: linear-gradient(
 		-15deg, 
-		$color-darkPurple 5%, 
-		$color-teal 95%
+		darken($color-b, 12%),
+		$color-a 95%
 	);
     position: absolute;
 	width: 100%;
@@ -28,19 +28,19 @@
 	vertical-align: middle;
 	line-height: 90px; 
 	
-	color: #ddf1ff;
+	color: lighten($color-a, 60%);
 	
 	&.main {    
 		cursor: default;
     	padding-top: 10%;
-   	 opacity: 0.95;
-  	  font-size: 260%;
- 	   line-height: 37px;
+	   	opacity: 0.95;
+	  	font-size: 260%;
+	 	line-height: 37px;
 	}
 	&.sub {
 		cursor: pointer;
 		opacity: 0.6;
-     	  font-size: 150%;
+     	font-size: 150%;
 	}
 }
 
@@ -71,7 +71,7 @@
 	    position: fixed;
 	    display: table;
 	    text-align: center;
-		color: $color-darkBlue;
+		color: $color-b;
 		font-weight: 500;
 		opacity: 0.65;
 		cursor: pointer;

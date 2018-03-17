@@ -1,9 +1,20 @@
-$color-lightBlue: #51e2ff;
-$color-teal: #2c8993;
-$color-darkBlue: #1e5c6f;
 
-$color-lightPurple: #7c76b0; // rgb(124, 118, 176)
-$color-purple: #413f54;
+$color-a: #2c8993;
+$color-b: #1e5c6f;
 
-$color-darkPurple: #30292f;
-$color-darkPurple-darker: #30292f;
+$color-c: #5D5C61;
+$color-d: #567992;
+
+/*/////////////////////////////////////
+	Filter Colors (IDE HIGHLIGHTER)
+/////////////////////////////////////*/
+$int: 10%;
+$fc: $color-b;
+
+// lighten($fc,$int)
+// darken($fc,$int)
+// saturate($fc,$int) 
+// desaturate($fc,$int) 
+//////////////////////////////////
+
+// http://blog.visme.co/website-color-schemes/

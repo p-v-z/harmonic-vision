@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import anime from 'animejs';
 
-import MenuButton from '../components/menuButton';
+// import MenuButton from '../components/menuButton';
 import Waves from '../components/wave';
 
 import '../styles/page-welcome.css';
@@ -27,32 +27,35 @@ class PageWelcome extends Component {
 		////////////////////////////////////////////////////
 		// eslint-disable-next-line
 		{/* -> Animate IN */
+			let pageIn = 3000;
+			
 			anime({ // Background
 				targets: '.page-welcome',
 				opacity: [0, 1],
 				delay: 0,
-				duration: 2000,
+				duration: pageIn,
 				easing: 'easeInQuart'
 			});
 			anime({ // Logo
 				targets: '#logo-image',
-				opacity: [0, 0.1],
-				delay: 1000,
-				duration: 3000,
+				opacity: [0, 0.09],
+				delay: pageIn/2,
+				duration: pageIn/2,
 				easing: 'easeInQuart'
 			});
+			
 			anime({ // Text
 				targets: '.middle',
 				opacity: [0, 1],
 				scaleY: [2, 1],
-				delay: 2000,
+				delay: pageIn,
 				duration: 1000,
 				easing: 'easeInOutQuart'
 			});
 			anime({ // Biz Link
 				targets: '.biz-link',
 				opacity: [0, 1],
-				delay: 1000,
+				delay: pageIn,
 				duration: 3000,
 				easing: 'easeInOutQuart'
 			});
@@ -71,12 +74,14 @@ class PageWelcome extends Component {
 		////////////////////////////////////////////////////
 		// eslint-disable-next-line
 		{/* Animate OUT -> */
+			let pageOut = 2000;
+			
 			// Background
 			anime({
 				targets: '.page-welcome', 
 				opacity: 0, 
-				delay: 500, 
-				duration: 2000, 
+				delay: pageOut / 4, 
+				duration: pageOut, 
 				easing: 'easeInQuart'}
 			);
 			
@@ -84,7 +89,8 @@ class PageWelcome extends Component {
 			anime({
 				targets: '#logo-image', 
 				opacity: 0, 
-				duration: 1000, 
+				rotate: '1turn',
+				duration: pageOut, 
 				easing: 'easeInQuart'
 			});
 			
@@ -92,9 +98,13 @@ class PageWelcome extends Component {
 			anime({
 				targets: '.middle', 
 				opacity: 0, 
-				scaleX: 0.1, 
-				scaleY: 0.1,
-				duration: 750,
+				duration: pageOut*0.89,
+				easing: 'easeInBack'
+			});
+			anime({
+				targets: '.middle', 
+				scale: 0, 
+				duration: pageOut*0.9,
 				easing: 'easeInBack'
 			});
 			
@@ -102,12 +112,12 @@ class PageWelcome extends Component {
 			anime({
 				targets: '.biz-link', 
 				opacity: 0, 
-				easing: 'easeInOutQuart'
+				duration: pageOut / 4
 			});
 			
 			// Waves
-			anime({targets: '.wave-container .head', top: -500, duration: 2000, easing: 'easeInOutQuart'});
-			anime({targets: '.wave-container .foot', bottom: -500, duration: 2000, easing: 'easeInOutQuart'});
+			anime({targets: '.wave-container .head', top: -500, duration: pageOut, easing: 'easeInOutQuart'});
+			anime({targets: '.wave-container .foot', bottom: -500, duration: pageOut, easing: 'easeInOutQuart'});
 		}
 		////////////////////////////////////////////////////
 				
@@ -131,13 +141,11 @@ class PageWelcome extends Component {
 		let logoSize,topOff,leftOff;
 		if (width <= height) { // Portrait
 			logoSize = width * 0.9;
-			// marg = width * 0.05;
 			topOff = (height - logoSize) / 2;
 			leftOff = width * 0.05;
 			console.log(`Screen orientation: Portrait (${width}px | ${height}px)`);
 		} else { // Landscape
 			logoSize = height * 0.9;
-			// marg = height * 0.05;
 			topOff = height * 0.05;
 			leftOff = (width - logoSize) / 2;
 			console.log(`Screen orientation: Landscape  (${width}px | ${height}px)`);
@@ -181,10 +189,10 @@ class PageWelcome extends Component {
 				<Waves/> 
 
 				{/* ===== Biz Link ===== */}
-				<div className="biz-link">
+				{/* <div className="biz-link"> */}
 					{/* <a href="" */}
-					<p>pvz</p>
-				</div>
+					{/* <p>pvz</p> */}
+				{/* </div> */}
 
 			</div>
 		);

@@ -7,8 +7,10 @@
 	overflow: hidden;
 }
 $side-skew-angle: 10deg;
-$side-color-left: $color-darkBlue;
-$side-color-right: $color-purple;
+$side-color-left: $color-c;
+$side-color-right: $color-d;
+$light-intensity: 10%;
+
 
 .side {
 	display: flex;
@@ -23,7 +25,7 @@ $side-color-right: $color-purple;
 
 	&.left {
 		z-index: 2; // Top
-		background-color: $side-color-left;
+		background-color: darken($side-color-left, $light-intensity);
 		// Animations
 		&.in {
 			animation-name: slide-left;
@@ -37,19 +39,18 @@ $side-color-right: $color-purple;
 			cursor: pointer;
 
 			&:hover {
-				background-color: lighten($side-color-left, 20%);
+				background-color: $side-color-left;
 			}
 		}
 
 		&.goLeft {
-			background-color: lighten($side-color-left, 20%);
-			
+			background-color: $side-color-left;
 			animation-name: fill-screenL;
 			animation-duration: 1.5s;
 			animation-timing-function: ease;
 			animation-fill-mode: forwards;
 		}
-		
+
 		&.goRight {
 			animation-name: fill-screenR;
 			animation-duration: 1.5s;
@@ -60,7 +61,7 @@ $side-color-right: $color-purple;
 
 	&.right {
 		z-index: 1; // Bottom
-		background-color: $side-color-right;
+		background-color: darken($side-color-right, $light-intensity);
 		// Animations
 		&.in {
 			animation-name: slide-right;
@@ -74,16 +75,18 @@ $side-color-right: $color-purple;
 			cursor: pointer;
 
 			&:hover {
-				background-color: lighten($side-color-right, 20%);
+				background-color: $side-color-right;
 			}
 		}
 
 		&.goLeft {
-			background-color: lighten($side-color-right, 20%);
+			background-color: $side-color-right;
 			transform: skew(0);
 		}
+
 		&.goRight {
-			background-color: lighten($side-color-right, 20%);
+			width: 100%;
+			background-color: $side-color-right;
 			transform: skew(0);
 		}
 	}
@@ -93,6 +96,7 @@ $side-color-right: $color-purple;
 	0% {
 		right: -110%;
 	}
+
 	100% {
 		right: 49%;
 	}
@@ -101,17 +105,18 @@ $side-color-right: $color-purple;
 	0% {
 		left: 110%;
 	}
+
 	100% {
 		left: 50%;
 	}
 }
-
 // OUT
 @keyframes fill-screenL {
 	0% {
 		right: 49%;
 		width: 100%;
 	}
+
 	100% {
 		right: -50%;
 		width: 200%;
@@ -121,7 +126,34 @@ $side-color-right: $color-purple;
 	0% {
 		right: 49%;
 	}
+
 	100% {
-		right: 110%;
+		right: 120%;
 	}
 }
+
+.labelContainer {
+	position: relative;
+	width: 50%;
+	height: stretch;
+	float: left;
+	z-index: 4;
+	pointer-events: none;
+}
+
+.label {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	// color: black;
+	z-index: 5;
+	font-size: 3rem;
+	
+	transition: all 0.3s ease;
+}
+
+///////////////////////////////////
