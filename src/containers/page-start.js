@@ -57,9 +57,9 @@ class PageStart extends Component {
 						onClick={this.clickRight}
 					/>
 					
-					{/* <div className="labelContainer">
+					<div className="labelContainer">
 						<h1 className="label work">Work</h1>
-					</div> */}
+					</div>
 					<div className="labelContainer">
 						<h1 className="label play">Play</h1>
 					</div>

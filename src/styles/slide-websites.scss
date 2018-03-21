@@ -1,0 +1,45 @@
+@import "./colors.scss";
+
+.slide-container {	
+	
+	.websites-container {
+		height: 30rem;
+		
+		background-image: linear-gradient(
+			rgba(#000000, 0) 95%,
+			$bgGames
+		);
+		
+		.slide-content {
+			position: relative;
+			
+			@media (max-width: 650px) {
+				height: 90%;
+			}
+			
+			// Center pos
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		
+			width: 90%;
+			// height: 90%;
+			
+			background-color:rgba(1, 1, 1, 0.5);
+			opacity: 1;
+			
+		    border-top-right-radius: 1rem;
+		    border-bottom-left-radius: 1rem;
+			overflow-y: auto;
+						
+			.text {
+				color: white;
+				text-align: center;
+				margin: 0;
+				line-height: 2rem;
+			}
+		}
+	}
+
+
+}

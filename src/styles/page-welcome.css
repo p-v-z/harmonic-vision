@@ -2,6 +2,7 @@
 	Filter Colors (IDE HIGHLIGHTER)
 /////////////////////////////////////*/
 .page-welcome {
+  overflow: hidden;
   background-image: linear-gradient(-15deg, #11343f, #2c8993 95%);
   position: absolute;
   width: 100%;

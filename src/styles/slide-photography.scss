@@ -1,0 +1,33 @@
+@import "./colors.scss";
+.slide-container {		
+	.pics-container {
+		// background-image: linear-gradient(
+		// 	rgba(#000000, 0) 95%,
+		// 	#fff
+		// );
+		
+		.paper-pics {
+			overflow: hidden;
+			
+			margin: 1rem;
+			padding: 0.5rem;
+			padding-bottom: 2rem;
+			
+			width: 80%;
+		    color: white;
+		    background-color: rgba(255, 255, 255, 0.2);
+			
+		    box-sizing: border-box;
+			
+			border-top-right-radius: 1rem;
+			border-bottom-left-radius: 1rem;
+			
+		    text-align: center;
+		    display: inline-block;
+			vertical-align: middle;
+			
+		}
+	}
+
+
+}
