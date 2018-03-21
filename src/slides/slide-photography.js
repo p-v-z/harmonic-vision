@@ -22,35 +22,37 @@ class SlidePhotography extends Component {
 
 	componentDidMount() {
 	}
-	
+
 	render() {
 	    var settings = {
 	      dots: true,
 		  arrows: false,
+			fade: true,
 	      infinite: true,
 	      speed: 500,
 	      slidesToShow: 1,
 	      slidesToScroll: 1,
+				pauseOnHover: false,
 		  draggable: true,
 		  autoplay: true,
 		  autoplaySpeed: 3000,
 		  adaptiveHeight: true
 	    };
-	
+
 		return (
 			<div className="slide-container">
 
 				<SlideHeader headerTitle="Photography" headerClass="photography" />
 				<div className="fader photo" />
-				
-				<Parallax 
+
+				<Parallax
 					bgImage={require("../assets/parallax/photography.jpg")}
 					strength={200}
 				>
-					
+
 					<div className="pics-container">
-						<div className="paper-pics"> 
-							
+						<div className="paper-pics">
+
 						    <Slider {...settings}>
 								<img src={pic1} alt=""/>
 								<img src={pic2} alt=""/>
@@ -60,10 +62,10 @@ class SlidePhotography extends Component {
 								<img src={pic6} alt=""/>
 								<img src={pic7} alt=""/>
 						    </Slider>
-							
+
 						</div>
 					</div>
-					
+
 				</Parallax>
 			</div>
 		)

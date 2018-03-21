@@ -31,7 +31,7 @@ class SlideVideoGames extends Component {
 			easing: 'easeInQuart'
 		});
 	}
-	
+
 	render() {
 	    var settings = {
 	      dots: true,
@@ -43,24 +43,25 @@ class SlideVideoGames extends Component {
 	      slidesToScroll: 1,
 		  draggable: true,
 		  autoplay: true,
-		  autoplaySpeed: 5000,
+			pauseOnHover: false,
+		  autoplaySpeed: 3000,
 		  adaptiveHeight: true
 	    };
-	
+
 		return (
 			<div className="slide-container">
 
 				<SlideHeader headerTitle="Video Games" headerClass="games" />
 				<div className="fader games" />
 
-				<Parallax 
+				<Parallax
 					bgImage={require("../assets/parallax/games.jpg")}
 					strength={150}
 				>
 					<div className="games-container">
 
 						{/* Fantasy Fighter */}
-						<div className="paper"> 
+						<div className="paper">
 							<h2>Fantasy Fighter</h2>
 						    <Slider ref="slide" {...settings}>
 								<img src={picA} alt="" onLoad={console.log("aaah")}/>
@@ -69,25 +70,25 @@ class SlideVideoGames extends Component {
 								<img src={picD} alt=""/>
 								<img src={picE} alt=""/>
 						    </Slider>
-							
+
 							<br/>
     						<Icon addClass="unity glow" iconText="Unity"/>
-							
+
 							<p className="page-text"><strong>Fantasy Fighter</strong> aims to be a top-down, multiplayer, spell-slinging, brawler game. Players control a single wizard and use magic to destroy opposing players. The game features an in-depth spell casting system.</p>
 							<p className="page-text">Current status: Iteration 4 - Design</p>
 						</div>
-						
+
 						{/* Slotmachines */}
-						<div className="paper"> 
+						<div className="paper">
 							<h2>Slot Machines</h2>
 							<div className="slot-image" />
-							
+
 							<br/>
     						<Icon addClass="createjs glow" iconText="CreateJS"/>
-							
+
 							<p className="page-text">Server-side and front-end development of commercially used slot machine games and features.</p>
 						</div>
-						
+
 					</div>
 				</Parallax>
 			</div>

@@ -13,12 +13,12 @@ class PageWelcome extends Component {
 			width: 0,
 			height: 0
 		};
-		
+
 		this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		this.routeToNextPage = this.routeToNextPage.bind(this);
 	}
-	
+
 	componentDidMount() {
 		// Listen for resize
 		this.updateWindowDimensions();
@@ -28,7 +28,7 @@ class PageWelcome extends Component {
 		// eslint-disable-next-line
 		{/* -> Animate IN */
 			let pageIn = 3000;
-			
+
 			anime({ // Background
 				targets: '.page-welcome',
 				opacity: [0, 1],
@@ -43,7 +43,7 @@ class PageWelcome extends Component {
 				duration: pageIn/2,
 				easing: 'easeInQuart'
 			});
-			
+
 			anime({ // Text
 				targets: '.middle',
 				opacity: [0, 1],
@@ -65,7 +65,7 @@ class PageWelcome extends Component {
 
 	updateWindowDimensions() {
 		this.setState({
-			width: window.innerWidth, 
+			width: window.innerWidth,
 			height: window.innerHeight
 		});
 	}
@@ -75,59 +75,59 @@ class PageWelcome extends Component {
 		// eslint-disable-next-line
 		{/* Animate OUT -> */
 			let pageOut = 2000;
-			
+
 			// Background
 			anime({
-				targets: '.page-welcome', 
-				opacity: 0, 
-				delay: pageOut / 4, 
-				duration: pageOut, 
+				targets: '.page-welcome',
+				opacity: 0,
+				delay: pageOut / 4,
+				duration: pageOut,
 				easing: 'easeInQuart'}
 			);
-			
+
 			// Logo
 			anime({
-				targets: '#logo-image', 
-				opacity: 0, 
+				targets: '#logo-image',
+				opacity: 0,
 				rotate: '1turn',
-				duration: pageOut, 
+				duration: pageOut,
 				easing: 'easeInQuart'
 			});
-			
+
 			// Text
 			anime({
-				targets: '.middle', 
-				opacity: 0, 
+				targets: '.middle',
+				opacity: 0,
 				duration: pageOut*0.89,
 				easing: 'easeInBack'
 			});
 			anime({
-				targets: '.middle', 
-				scale: 0, 
+				targets: '.middle',
+				scale: 0,
 				duration: pageOut*0.9,
 				easing: 'easeInBack'
 			});
-			
+
 			// Biz Link
 			anime({
-				targets: '.biz-link', 
-				opacity: 0, 
+				targets: '.biz-link',
+				opacity: 0,
 				duration: pageOut / 4
 			});
-			
+
 			// Waves
 			anime({targets: '.wave-container .head', top: -500, duration: pageOut, easing: 'easeInOutQuart'});
 			anime({targets: '.wave-container .foot', bottom: -500, duration: pageOut, easing: 'easeInOutQuart'});
 		}
 		////////////////////////////////////////////////////
-				
+
 		setTimeout(this.routeToNextPage, 2750);
 	}
 
 	routeToNextPage() {
-		this.props.history.push('/start');
+		this.props.history.push('/skills');
 	}
-	
+
 	componentWillUnmount() {
 		// Destroy listeners
 		window.removeEventListener('resize', this.updateWindowDimensions);
@@ -156,13 +156,13 @@ class PageWelcome extends Component {
 				{/* <MenuButton /> */}
 
 				{/* ===== BACKGROUND LOGO ===== */}
-				<div id="logo-image" 
+				<div id="logo-image"
 					style={{
 						width: logoSize,
 						height: logoSize,
 						top: topOff,
 						left: leftOff
-					}}/> 
+					}}/>
 
 				{/* ===== TEXT CONTENT ===== */}
 				<div className="outer">
@@ -173,9 +173,9 @@ class PageWelcome extends Component {
 						</div>
 
 						<div className="inner main">
-							<p 
-								id="start-link" 
-								className="text-field sub" 
+							<p
+								id="start-link"
+								className="text-field sub"
 								onClick={this.handleClick}
 							>
 								Start
@@ -186,7 +186,7 @@ class PageWelcome extends Component {
 				</div>
 
 				{/* ===== Waves ===== */}
-				<Waves/> 
+				<Waves/>
 
 				{/* ===== Biz Link ===== */}
 				{/* <div className="biz-link"> */}

@@ -11,9 +11,9 @@ class SlideContact extends Component {
 	render() {
 		return (
 			<div className="contact">
-				
+
 				<h3>Contact</h3>
-				
+
 				<div className="personal">
 					<h5>Petrie van Zyl</h5>
 					<p>
@@ -21,12 +21,12 @@ class SlideContact extends Component {
 						South Africa <br/>
 					</p>
 					<a href="mailto:pvanzyl.work@gmail.com">pvanzyl.work@gmail.com</a>
-					
-					
-					<a className="linkedin" href="https://www.linkedin.com/in/petrie-van-zyl" />
-				</div>		
+
+
+					<a className="linkedin" href="https://www.linkedin.com/in/petrie-van-zyl"> </a>
+				</div>
 				<br/>
-			
+
 			</div>
 		)
 	}
