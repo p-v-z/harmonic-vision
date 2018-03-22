@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import anime from 'animejs';
 
-import '../styles/page-scroller.css';
+import '../styles/page-skills.css';
 
 class SlideHeader extends Component {
 	constructor(props) {

@@ -2,9 +2,11 @@
   "name": "harmonic-vision",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://petrie65.github.io/hv/",
   "dependencies": {
     "animejs": "^2.2.0",
     "bootstrap": "^4.0.0",
+    "gh-pages": "^1.1.0",
     "jquery": "^3.3.1",
     "material-ui": "^0.20.0",
     "node-sass-chokidar": "0.0.3",
@@ -25,12 +27,14 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
+  	"predeploy": "npm run build",
+	"deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+	  
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
