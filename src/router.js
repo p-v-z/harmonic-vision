@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 // React Router DOM v4
 
@@ -13,14 +13,14 @@ import PageContact from './containers/page-contact';
  * Routes and views to render
  */
 const Router = (
-	<BrowserRouter>
+	<HashRouter>
 		<Switch>
 			<Route exact path='/' component={PageWelcome}/>
 			<Route path='/start' component={PageStart}/>
 			<Route path='/skills' component={PageSkills}/>
 			<Route path='/contact' component={PageContact}/>
 		</Switch>
-	</BrowserRouter>
+	</HashRouter>
 
 )
 
