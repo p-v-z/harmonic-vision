@@ -13,7 +13,7 @@ import store from './store';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Router from './router';
 
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 

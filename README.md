@@ -1,8 +1,12 @@
 # harmonic-vision
 
-Static:
-Packages:
-	Set homepage
-	add gh-pages dependency
-Change BrowserRouter to HashRouter
-Remove ServiceWorker
+Public portfolio page - Petrie van Zyl
+
+View application
+https://petrie65.github.io/hv/#/
+
+Run locally:
+`npm start`
+
+Deploy
+`npm run deploy`
